@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Valentine Link Generator 💘</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:linear-gradient(135deg,#ff9ecb,#ffc2d1);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  width:360px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:12px;
+  border:2px solid #ffb3c6;
+  font-size:16px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  background:linear-gradient(90deg,#ff4d8d,#ff0080);
+  color:white;
+  cursor:pointer;
+}
+
+#linkBox{
+  margin-top:15px;
+  word-break:break-all;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>💖 Valentine Link Generator</h2>
+
+  <input id="me" placeholder="Your Name">
+  <input id="love" placeholder="Valentine Name">
+
+  <button onclick="genLink()">✨ Generate Link</button>
+
+  <div id="linkBox"></div>
+</div>
+
+<script>
+function genLink(){
+  const me = encodeURIComponent(document.getElementById("me").value.trim());
+  const love = encodeURIComponent(document.getElementById("love").value.trim());
+
+  if(!me || !love){
+    alert("Please enter both names ❤️");
+    return;
+  }
+
+  const base =
+    window.location.origin +
+    window.location.pathname.replace("index.html","");
+
+  const link = base + "love.html?me="+me+"&love="+love;
+
+  document.getElementById("linkBox").innerHTML =
+    `<br>💌 Share this link:<br><a href="${link}" target="_blank">${link}</a>`;
+}
+</script>
+
+</body>
+</html>
