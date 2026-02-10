@@ -51,7 +51,7 @@ button{
 
 <script>
 
-/* ✅ READ URL PARAMS */
+/* ✅ Read names from link */
 const params = new URLSearchParams(window.location.search);
 const me = params.get("me") || "Me";
 const love = params.get("love") || "My Love";
@@ -59,7 +59,7 @@ const love = params.get("love") || "My Love";
 document.getElementById("title").innerText =
   love + ", Will You Be Mine Forever? 💖";
 
-/* ✅ NO BUTTON ESCAPE — SAFE BIND */
+/* ✅ NO button escape game */
 const noBtn = document.getElementById("noBtn");
 
 function moveNo(){
@@ -70,7 +70,7 @@ function moveNo(){
 noBtn.addEventListener("mouseenter", moveNo);
 noBtn.addEventListener("click", moveNo);
 
-/* ✅ YES BUTTON WORKS */
+/* ✅ YES click final page */
 function yesClick(){
   document.getElementById("card").innerHTML = `
     <h1>💖 Happy Valentine’s Day ${love} 💖</h1>
@@ -85,7 +85,11 @@ function yesClick(){
       Your love is my greatest gift 💞
     </p>
 
-    <h2>You are my today, tomorrow & forever ❤️</h2>
+    <p>
+      I want every tomorrow with you ❤️
+    </p>
+
+    <h2>You are my today, tomorrow & forever 💍</h2>
 
     <h3>— ${me}</h3>
   `;
